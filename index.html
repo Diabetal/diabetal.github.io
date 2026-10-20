@@ -35,15 +35,13 @@
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
- body {
-    padding-left: max(15px, env(safe-area-inset-left));
-    padding-right: max(15px, env(safe-area-inset-right));
-}
-
-/* Сбрасываем лишние внешние отступы у крупных блоков, если они прижимаются к краям */
-body > * {
-    margin-left: 0;
-    margin-right: 0;
+.container {
+    width: 100%;             /* Занимает всю ширину на мобильных устройствах */
+    max-width: 1200px;       /* Максимальная ширина контента (измените под свой дизайн) */
+    margin: 0 auto;          /* Центрирует контейнер на больших экранах */
+    padding-left: 15px;      /* Отступ слева */
+    padding-right: 15px;     /* Отступ справа */
+    box-sizing: border-box;  /* Гарантирует, что 15px отступов не увеличат общую ширину сайта */
 }
 h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.2;font-weight:700}
 h1{font-size:clamp(2rem,5vw,3.4rem)}h2{font-size:clamp(1.55rem,3.2vw,2.2rem);margin-bottom:14px}h3{font-size:1.2rem;margin-bottom:6px}
@@ -98,6 +96,7 @@ footer a{color:#9fd8c9}
 </style>
 </head>
 <body>
+<div class="container">
 <header><div class="w nav"><a class="logo" href="#top">Диабеталь</a>
 <nav><a href="#about">О продукте</a><a href="#compose">Состав</a><a href="#diet">Питание</a><a href="#docs">Документы</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
 <button class="btn s" data-order>Получить консультацию</button></nav></div></header>
@@ -229,5 +228,6 @@ d.addEventListener("click",function(e){
 d.addEventListener("keydown",function(e){if(e.key==="Escape")hide()});
 if(location.hash==="#privacy")show(pm);
 </script>
+</div>
 </body>
 </html>

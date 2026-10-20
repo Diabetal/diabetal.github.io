@@ -35,6 +35,16 @@
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+ body {
+    padding-left: max(15px, env(safe-area-inset-left));
+    padding-right: max(15px, env(safe-area-inset-right));
+}
+
+/* Сбрасываем лишние внешние отступы у крупных блоков, если они прижимаются к краям */
+body > * {
+    margin-left: 0;
+    margin-right: 0;
+}
 h1,h2,h3{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;line-height:1.2;font-weight:700}
 h1{font-size:clamp(2rem,5vw,3.4rem)}h2{font-size:clamp(1.55rem,3.2vw,2.2rem);margin-bottom:14px}h3{font-size:1.2rem;margin-bottom:6px}
 a{color:var(--acc)}p+p{margin-top:12px}
